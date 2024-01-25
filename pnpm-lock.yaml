@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@swc/helpers':
-    specifier: ~0.5.2
+    specifier: ~0.5.3
     version: 0.5.3
   react:
     specifier: 18.2.0
@@ -14,8 +14,20 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-router-dom:
+    specifier: 6.11.2
+    version: 6.11.2(react-dom@18.2.0)(react@18.2.0)
+  tslib:
+    specifier: ^2.6.2
+    version: 2.6.2
 
 devDependencies:
+  '@babel/core':
+    specifier: ^7.23.7
+    version: 7.23.7
+  '@babel/preset-react':
+    specifier: ^7.23.3
+    version: 7.23.3(@babel/core@7.23.7)
   '@nx/cypress':
     specifier: 17.2.8
     version: 17.2.8(@swc-node/register@1.6.8)(@swc/core@1.3.106)(@types/node@18.14.2)(eslint@8.48.0)(nx@17.2.8)(typescript@5.2.2)
@@ -44,16 +56,16 @@ devDependencies:
     specifier: 17.2.8
     version: 17.2.8(@swc-node/register@1.6.8)(@swc/core@1.3.106)
   '@playwright/test':
-    specifier: ^1.36.0
+    specifier: ^1.41.1
     version: 1.41.1
   '@swc-node/register':
-    specifier: ~1.6.7
+    specifier: ~1.6.8
     version: 1.6.8(@swc/core@1.3.106)(typescript@5.2.2)
   '@swc/cli':
-    specifier: ~0.1.62
+    specifier: ~0.1.65
     version: 0.1.65(@swc/core@1.3.106)
   '@swc/core':
-    specifier: ~1.3.85
+    specifier: ~1.3.106
     version: 1.3.106(@swc/helpers@0.5.3)
   '@testing-library/react':
     specifier: 14.0.0
@@ -68,25 +80,25 @@ devDependencies:
     specifier: 18.2.14
     version: 18.2.14
   '@typescript-eslint/eslint-plugin':
-    specifier: ^6.9.1
+    specifier: ^6.19.1
     version: 6.19.1(@typescript-eslint/parser@6.19.1)(eslint@8.48.0)(typescript@5.2.2)
   '@typescript-eslint/parser':
-    specifier: ^6.9.1
+    specifier: ^6.19.1
     version: 6.19.1(eslint@8.48.0)(typescript@5.2.2)
   '@vitejs/plugin-react':
-    specifier: ^4.2.0
+    specifier: ^4.2.1
     version: 4.2.1(vite@5.0.12)
   '@vitest/coverage-v8':
     specifier: ~0.34.6
     version: 0.34.6(vitest@0.34.6)
   '@vitest/ui':
-    specifier: ~0.34.6
+    specifier: ~0.34.7
     version: 0.34.7(vitest@0.34.6)
   eslint:
     specifier: ~8.48.0
     version: 8.48.0
   eslint-config-prettier:
-    specifier: ^9.0.0
+    specifier: ^9.1.0
     version: 9.1.0(eslint@8.48.0)
   eslint-plugin-import:
     specifier: 2.27.5
@@ -110,13 +122,13 @@ devDependencies:
     specifier: 17.2.8
     version: 17.2.8(@swc-node/register@1.6.8)(@swc/core@1.3.106)
   prettier:
-    specifier: ^2.6.2
+    specifier: ^2.8.8
     version: 2.8.8
   typescript:
     specifier: ~5.2.2
     version: 5.2.2
   vite:
-    specifier: ^5.0.0
+    specifier: ^5.0.12
     version: 5.0.12(@types/node@18.14.2)
   vitest:
     specifier: ~0.34.6
@@ -2414,6 +2426,11 @@ packages:
     resolution: {integrity: sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==}
     dev: true
 
+  /@remix-run/router@1.6.2:
+    resolution: {integrity: sha512-LzqpSrMK/3JBAVBI9u3NWtOhWNw5AMQfrUFYB0+bDHTSw17z++WJLsPsxAuK+oSddsxk4d7F/JcdDPM1M5YAhA==}
+    engines: {node: '>=14'}
+    dev: false
+
   /@rollup/rollup-android-arm-eabi@4.9.6:
     resolution: {integrity: sha512-MVNXSSYN6QXOulbHpLMKYi60ppyO13W9my1qogeiAqtjb2yR4LSmfU2+POvDkLzhjYLXz9Rf9+9a3zFHW1Lecg==}
     cpu: [arm]
@@ -2732,9 +2749,9 @@ packages:
       '@mole-inc/bin-wrapper': 8.0.1
       '@swc/core': 1.3.106(@swc/helpers@0.5.3)
       commander: 7.2.0
-      fast-glob: 3.2.7
+      fast-glob: 3.3.2
       minimatch: 9.0.3
-      semver: 7.5.3
+      semver: 7.5.4
       slash: 3.0.0
       source-map: 0.7.4
     dev: true
@@ -3766,7 +3783,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       bin-version: 6.0.0
-      semver: 7.5.3
+      semver: 7.5.4
       semver-truncate: 3.0.0
     dev: true
 
@@ -5171,6 +5188,17 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
+      minimatch: 3.0.5
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: true
+
+  /glob@7.2.3:
+    resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
@@ -5975,7 +6003,7 @@ packages:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /make-error@1.3.6:
@@ -6634,6 +6662,29 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /react-router-dom@6.11.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JNbKtAeh1VSJQnH6RvBDNhxNwemRj7KxCzc5jb7zvDSKRnPWIFj9pO+eXqjM69gQJ0r46hSz1x4l9y0651DKWw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.11.2(react@18.2.0)
+    dev: false
+
+  /react-router@6.11.2(react@18.2.0):
+    resolution: {integrity: sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.6.2
+      react: 18.2.0
+    dev: false
+
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -6764,7 +6815,7 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
     dependencies:
-      glob: 7.1.4
+      glob: 7.2.3
     dev: true
 
   /rollup@4.9.6:
@@ -6865,7 +6916,7 @@ packages:
     resolution: {integrity: sha512-LJWA9kSvMolR51oDE6PN3kALBNaUdkxzAGcexw8gjMA8xr5zUqK0JiR3CgARSqanYF3Z1YHvsErb1KDgh+v7Rg==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /semver@6.3.1:
@@ -7253,7 +7304,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@istanbuljs/schema': 0.1.3
-      glob: 7.1.4
+      glob: 7.2.3
       minimatch: 3.1.2
     dev: true
 
