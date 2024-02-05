@@ -1,0 +1,73 @@
+{
+  "name": "todo-app-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/todo-app-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/todo-app-backend/target"]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "dependsOn": ["^install"],
+      "outputs": ["{workspaceRoot}/apps/todo-app-backend/target"]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "outputs": ["{workspaceRoot}/apps/todo-app-backend/target"]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "dependsOn": ["^install"]
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "dependsOn": ["^install"]
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      },
+      "outputs": ["{workspaceRoot}/apps/todo-app-backend/target"]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "apps/todo-app-backend",
+        "ignoreWrapper": true
+      }
+    }
+  },
+  "tags": []
+}
